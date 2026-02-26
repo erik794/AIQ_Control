@@ -1,0 +1,182 @@
+/* ===== RESET GENERAL ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+/* ===== SIDEBAR FIJA ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(8, 99, 190), rgba(9, 32, 227));
+    color: white;
+    padding: 30px 22px;
+    box-shadow: 6px 0 20px rgba(4, 104, 104, 0.18);
+    z-index: 1000;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo img {
+    width: 90px;        /* tamaño ideal */
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff; /* Cambiado a blanco para mejor contraste con el azul */
+    letter-spacing: 1px;
+}
+
+/* ===== LINKS ===== */
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 12px 0;
+    padding: 11px 16px;
+    border-radius: 10px;
+    transition: background .2s, padding-left .2s;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    padding-left: 24px;
+    color: #ffffff;
+}
+
+/* ===== CONTENIDO ===== */
+.contenido {
+    margin-left: 240px;      /* empuja el contenido */
+    padding: 35px;
+    min-height: 100vh;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #2c2c2c;
+}
+
+/* ===== POSICIONES ===== */
+.pos {
+    width: 130px;
+    padding: 12px;
+    margin: 6px;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    box-shadow: 0 6px 15px rgba(0,0,0,.15);
+}
+
+.libre {
+    background: linear-gradient(135deg, #2196f3, #21cbf3);
+}
+
+.ocupada {
+    background: linear-gradient(135deg, #e91e63, #ff5c8a);
+}
+
+/* ===== TABLA (AZUL PROFESIONAL) ===== */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,.1);
+}
+
+.tabla thead {
+    /* Degradado en tonos azul marino/profundo */
+    background: linear-gradient(135deg, #004e92, #000428);
+    color: white;
+}
+
+.tabla th {
+    padding: 18px 16px;
+    text-align: center;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tabla td {
+    padding: 14px 16px;
+    text-align: center;
+    color: #444;
+}
+
+.tabla tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background .2s, transform .15s;
+}
+
+.tabla tbody tr:hover {
+    /* Fondo azul claro al pasar el cursor */
+    background: #e3f2fd;
+    transform: scale(1.002);
+}
+
+.vuelo {
+    font-weight: bold;
+    color: #0d47a1; /* Azul fuerte para resaltar el número de vuelo */
+}
+
+/* ===== INPUTS ===== */
+input[type="number"],
+input[type="text"],
+select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input[type="number"] {
+    width: 80px;
+    text-align: center;
+}
+
+select {
+    width: 150px;
+}
+
+input:focus, select:focus {
+    border-color: #004e92;
+}
+
+/* ===== BOTÓN ===== */
+.btn-guardar {
+    background: linear-gradient(135deg, rgb(0, 78, 146), rgb(0, 114, 255));
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-guardar:hover {
+    box-shadow: 0 6px 15px rgba(0, 78, 146, 0.4);
+    transform: translateY(-1px);
+}
