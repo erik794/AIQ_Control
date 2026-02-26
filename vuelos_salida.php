@@ -5,10 +5,7 @@ include "sidebar.php";
 date_default_timezone_set('America/Mexico_City');
 $hoy = date("Y-m-d");
 
-/**
- * 1. CONSULTA DE LLEGADAS PENDIENTES (El avión que acaba de aterrizar o viene en camino)
- * Filtramos para que solo aparezcan las que aún NO tienen un vuelo de salida asignado.
- */
+
 $llegadas = $conexion->query("
     SELECT v.* FROM vuelos v 
     WHERE v.date = '$hoy' 
@@ -17,10 +14,7 @@ $llegadas = $conexion->query("
     ORDER BY v.hour ASC, v.minute ASC
 ");
 
-/**
- * 2. SALIDAS DISPONIBLES
- * Cargamos las salidas que aún no tienen un avión (llegada) asignado.
- */
+
 $res_salidas = $conexion->query("
     SELECT flight_number, destination, airline_name, hour, minute 
     FROM vuelos 
@@ -135,19 +129,18 @@ function detectarPernocta(select) {
     
     if (!opt.value) return;
 
-    // Hora de la llegada (Fila)
+
     const hLleg = parseInt(fila.getAttribute('data-h-lleg'));
     const mLleg = parseInt(fila.getAttribute('data-m-lleg'));
     
-    // Hora de la salida (Opción seleccionada)
+  
     const hSal = parseInt(opt.getAttribute('data-h-sal'));
     const mSal = parseInt(opt.getAttribute('data-m-sal'));
 
     const totalLlegada = (hLleg * 60) + mLleg;
     const totalSalida = (hSal * 60) + mSal;
 
-    // Si la llegada es después de la salida, es porque el vuelo de salida es del día siguiente 
-    // o el avión que lo hará llegó la noche anterior.
+    
     if (totalLlegada >= totalSalida) {
         checkPernocta.checked = true;
     } else {

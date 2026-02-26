@@ -5,7 +5,7 @@ include "sidebar.php";
 date_default_timezone_set('America/Mexico_City');
 $hoy = date("Y-m-d");
 
-// Tu consulta SQL se queda igual, es muy eficiente
+
 $vuelos = $conexion->query("
     SELECT 
         airline_name, 
@@ -29,7 +29,7 @@ $vuelos = $conexion->query("
     ORDER BY hour ASC, minute ASC
 ");
 
-// Contamos el total de filas obtenidas
+
 $total_vuelos = ($vuelos) ? $vuelos->num_rows : 0;
 ?>
 

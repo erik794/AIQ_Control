@@ -5,7 +5,7 @@ include "sidebar.php";
 date_default_timezone_set('America/Mexico_City');
 $hoy = date("Y-m-d");
 
-// Cambiamos flight_type a 0 para SALIDAS
+//  flight_type a 0 para SALIDAS
 $salidas = $conexion->query("SELECT * FROM vuelos WHERE date = '$hoy' AND flight_type = 0 ORDER BY hour ASC");
 ?>
 
@@ -55,7 +55,7 @@ $salidas = $conexion->query("SELECT * FROM vuelos WHERE date = '$hoy' AND flight
                         <td style="text-align: center;">
                         <?php 
     $st = $s['status'];
-    // Lógica de colores actualizada
+    // Lógica de colores 
     $color = '#7f8c8d'; // Gris por defecto (Programado)
     
     if($st == 'A Tiempo') {

@@ -7,10 +7,7 @@ $hoy = date("Y-m-d");
 $ayer = date("Y-m-d", strtotime("-1 day")); 
 $ahora_obj = new DateTime(); 
 
-/**
- * 1. CONSULTA SQL ROBUSTA
- * Buscamos vuelos que aterrizan hoy O vuelos que aterrizaron ayer y salen hoy.
- */
+
 $query = "
     SELECT 
         v.airline_name, v.posicion_id, p.nombre AS pos_nombre, p.tipo AS pos_tipo,
@@ -190,7 +187,7 @@ if ($res_vuelos) {
 </div>
 
 <script>
-    // Sistema de refresco cada 30 segundos con barra de progreso
+    
     let timeLeft = 30; 
     const bar = document.getElementById('progress-bar');
     const reloj = document.getElementById('reloj-torre');
@@ -199,7 +196,7 @@ if ($res_vuelos) {
         timeLeft--;
         if (bar) bar.style.width = (timeLeft / 30 * 100) + "%";
         
-        // Actualizar reloj visualmente
+        
         const now = new Date();
         reloj.innerText = now.toLocaleTimeString('es-MX', {hour12: false});
 

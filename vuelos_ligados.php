@@ -6,7 +6,7 @@ date_default_timezone_set('America/Mexico_City');
 $hoy = date("Y-m-d");
 $error_msg = ""; 
 
-// 1. PROCESADOR DE DATOS
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['accion'])) {
     $id_salida = intval($_POST['id_salida']);
     $id_llegada = intval($_POST['id_llegada']);
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['accion'])) {
     }
 }
 
-// 2. CONSULTAS
+
 $safe_hoy = $conexion->real_escape_string($hoy);
 $ligados_res = $conexion->query("
     SELECT 
@@ -106,13 +106,13 @@ function colorAerolinea($nombre) {
     .salida { color: #2b6cb0; background: #ebf8ff; }
     .inp-h { border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px; width: 45px; text-align: center; font-weight: bold; }
     
-    /* Tiempos */
+    
     .countdown { font-family: monospace; font-weight: 700; padding: 6px 10px; border-radius: 6px; font-size: 12px; min-width: 110px; display: inline-block; }
     .espera { background: #edf2f7; color: #4a5568; } 
     .en-plataforma { background: #feebc8; color: #9c4221; border: 1px solid #fbd38d; } 
     .finalizado { background: #c6f6d5; color: #22543d; }
 
-    /* Alerta de Posición Mejorada */
+    
     .alerta-pos { 
         background: #fff5f5 !important; 
         border: 2px solid #feb2b2 !important; 
@@ -124,7 +124,7 @@ function colorAerolinea($nombre) {
         100% { box-shadow: 0 0 0 0px rgba(229, 62, 62, 0); }
     }
 
-    /* Estilos GANTT CORREGIDOS */
+    /* Estilos GANTT */
     .gantt-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow-x: auto; }
     .gantt-container { min-width: 1200px; position: relative; }
     .gantt-header { display: flex; margin-bottom: 10px; padding-left: 100px; border-bottom: 2px solid #f1f5f9; }
@@ -280,7 +280,7 @@ function updateDashboard() {
         
         if (tSalida <= tLlegada) tSalida.setDate(tSalida.getDate() + 1);
         
-        // --- MARGEN DE 5 MINUTOS ---
+        
         const margenMS = 5 * 60 * 1000;
         const radarInicio = new Date(tLlegada.getTime() - margenMS);
         const radarFin = new Date(tSalida.getTime() + margenMS);

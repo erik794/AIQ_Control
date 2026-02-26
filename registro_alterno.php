@@ -26,7 +26,7 @@ $posiciones = $conexion->query("SELECT id, nombre FROM posiciones ORDER BY nombr
 
                 <div class="vuelo-flex-container">
                     <div class="seccion-vuelo llegada">
-                        <label>⬇️ Entrada (Llegada):</label>
+                        <label>Entrada (Llegada):</label>
                         <input type="text" name="vuelo_llegada" class="input-form" required placeholder="N° Vuelo">
                         <div class="time-inputs">
                             <input type="number" name="h_llegada" placeholder="HH" min="0" max="23" required class="input-form">
@@ -36,7 +36,7 @@ $posiciones = $conexion->query("SELECT id, nombre FROM posiciones ORDER BY nombr
                     </div>
 
                     <div class="seccion-vuelo salida">
-                        <label>⬆️ Salida (Opcional):</label>
+                        <label>Salida (Opcional):</label>
                         <input type="text" name="vuelo_salida" class="input-form" placeholder="N° Vuelo">
                         <div class="time-inputs">
                             <input type="number" name="h_salida" placeholder="HH" min="0" max="23" class="input-form">
